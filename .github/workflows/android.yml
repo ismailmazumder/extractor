@@ -25,4 +25,10 @@ jobs:
       run: chmod +x gradlew
     
     - name: Build with Gradle
-      run: ./gradlew build
+      run: ./gradlew assembleRelease # or assembleDebug based on your needs
+
+    - name: Upload APK artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: android-apk
+        path: app/build/outputs/apk/release/*.apk # Adjust path if needed
