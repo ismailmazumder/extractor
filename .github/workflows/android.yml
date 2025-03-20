@@ -28,7 +28,7 @@ jobs:
       run: ./gradlew assembleRelease # or assembleDebug based on your needs
 
     - name: Upload APK artifact
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v2  # Changed to v2
       with:
         name: android-apk
         path: app/build/outputs/apk/release/*.apk # Adjust path if needed
